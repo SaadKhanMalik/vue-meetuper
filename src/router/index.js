@@ -2,7 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import PageHome from '@/pages/PageHome'
+import PageMeetupFind from '@/pages/PageMeetupFind'
 import PageMeetupDetail from '@/pages/PageMeetupDetail'
+import PageNotFound from '@/pages/PageNotFound'
+
 
 Vue.use(Router)
 
@@ -14,10 +17,21 @@ const router = new Router({
 			component: PageHome
 		},
 		{
+			path: '/find',
+			name: 'PageMeetupFind',
+			component: PageMeetupFind
+		},
+		{
 			path: '/meetup/:id',
-			name: 'PageMeetupDeatil',
+			name: 'PageMeetupDetail',
 			component: PageMeetupDetail
 		},
+		{
+			path: '*',
+			name: 'PageNotFound',
+			component: PageNotFound
+		}
+		
 	],
 	mode: 'history'
 })
